@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ReportDate: 2021-12-30 16:36:32
+  ReportStatement: MyString
+
+two:
+  ReportDate: 2021-12-30 16:36:32
+  ReportStatement: MyString

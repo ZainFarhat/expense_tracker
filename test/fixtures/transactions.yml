@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  TransactionAccount: MyString
+  TransactionType: MyString
+  TransactionAmount: 9.99
+  TransactionDate: 2021-12-30 16:35:07
+
+two:
+  TransactionAccount: MyString
+  TransactionType: MyString
+  TransactionAmount: 9.99
+  TransactionDate: 2021-12-30 16:35:07
