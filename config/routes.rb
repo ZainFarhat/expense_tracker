@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :reports
   resources :transactions
   resources :accounts
-  root to:"home#index" 
 
-  #get "transactions", to: "transactions#index"
+  root to:"home#index"
+  
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
 
-  #get "accounts", to: "accounts#index"
-
-  #get "reports", to: "reports#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
