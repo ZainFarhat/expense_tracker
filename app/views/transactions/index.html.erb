@@ -16,13 +16,14 @@
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
+        <td><%= transaction.user.LastName, transaction.user.FirstName %></td>
         <td><%= transaction.TransactionAccount %></td>
         <td><%= transaction.TransactionType %></td>
         <td><%= transaction.TransactionAmount %></td>
         <td><%= transaction.TransactionDate %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show User', [@user] %></td>
+        <td><%= link_to 'Edit Transaction', edit_user_transaction_path(@user, transaction) %></td>
+        <td><%= link_to 'Destroy Transaction', [@user, transaction], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'New Transaction', new_user_transaction_path(@user) %>

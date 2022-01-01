@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_034831) do
+ActiveRecord::Schema.define(version: 2022_01_01_001635) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "AccountName"
@@ -38,10 +38,9 @@ ActiveRecord::Schema.define(version: 2021_12_31_034831) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "DateofBirth"
+    t.datetime "DateofBirth"
     t.string "SocialSecurityNumber"
     t.decimal "TotalIncome"
     t.decimal "TotalExpenditure"

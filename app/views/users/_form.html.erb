@@ -12,38 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :FirstName, "First Name" %>
+    <%= form.text_field :FirstName %>
+  </div>
+
+  <div class="field">
+  <%= form.label :LastName, "Last Name" %>
+  <%= form.text_field :LastName %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.text_field :password_digest %>
+    <%= form.label :password_digest, "Password" %>
+    <%= form.password_field :password_digest %>
   </div>
 
   <div class="field">
-    <%= form.label :Dateofbirth %>
-    <%= form.text_field :Dateofbirth %>
+    <%= form.label :DateofBirth, "Date of Birth" %>
+    <%= form.date_field :DateofBirth %>
   </div>
 
   <div class="field">
-    <%= form.label :SocialSecurityNumber %>
-    <%= form.text_field :SocialSecurityNumber %>
-  </div>
-
-  <div class="field">
-    <%= form.label :TotalIncome %>
-    <%= form.text_field :TotalIncome %>
-  </div>
-
-  <div class="field">
-    <%= form.label :TotalExpenditure %>
-    <%= form.text_field :TotalExpenditure %>
+    <%= form.label :SocialSecurityNumber, "Social Security Number" %>
+    <%= form.password_field :SocialSecurityNumber %>
   </div>
 
   <div class="actions">
