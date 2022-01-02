@@ -1,7 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :accounts, dependent: :destroy
-    has_many :transactions, dependent: :destroy
     has_many :reports, dependent: :destroy
     validates :FirstName, presence: true
     validates :LastName, presence: true

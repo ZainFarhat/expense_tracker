@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :reports
-    resources :transactions
-    resources :accounts
+    resources :accounts do
+      resources :transactions
+    end
   end
 
   root to:"home#index"
