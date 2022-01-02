@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ show edit update destroy ]
   before_action :require_user_logged_in!
+  before_action :get_user
   before_action :get_account
 
   # GET /transactions or /transactions.json
@@ -30,7 +31,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to account_transactions_path(@account), notice: "Transaction was Successfully Created." }
+        format.html { redirect_to user_account_transactions_path(@user, @account), notice: "Transaction was Successfully Created." }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +44,7 @@ class TransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @transaction.update(transaction_params)
-        format.html { redirect_to account_transaction_path(@account), notice: "Transaction was Successfully Updated." }
+        format.html { redirect_to user_account_transaction_path(@user, @account), notice: "Transaction was Successfully Updated." }
         format.json { render :show, status: :ok, location: @transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,12 +58,16 @@ class TransactionsController < ApplicationController
     @transaction.destroy
 
     respond_to do |format|
-      format.html { redirect_to account_transactions_path(@account), notice: "Transaction was Successfully Destroyed." }
+      format.html { redirect_to user_account_transactions_path(@user, @account), notice: "Transaction was Successfully Destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
+
+    def get_user
+      @user = user.find(params[:id])
+    end
 
     def get_account
       @account = account.find(params[:account_id])

@@ -20,5 +20,5 @@
   <%= @transaction.TransactionDate %>
 </p>
 
-<%= link_to 'Edit', edit_account_transaction_path(@account, @transaction) %> |
-<%= link_to 'Back', account_transactions_path(@account) %>
+<%= link_to 'Edit', edit_user_account_transaction_path(@user, @account, @transaction) %> |
+<%= link_to 'Back', user_account_transactions_path(@user, @account) %>
